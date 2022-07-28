@@ -17,3 +17,16 @@ function setup() {
 
     frameRate(60);
 }
+
+function draw() {
+    background(51);
+
+    handlePlayer();
+
+    handlePlatforms();
+
+    drawScore();
+
+    handleKeys();
+
+}
