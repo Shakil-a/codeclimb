@@ -126,3 +126,43 @@ function generatePlatforms() {
              return field;
 }
 
+/**
+ * moves player based upon user input
+ */
+
+function handleKeys() {
+
+    if(keyIsDown(LEFT_ARROW)) {
+
+        player.applyForce(-1, 0);
+    } else if(keyIsDown(RIGHT_ARROW)) {
+
+        player.applyForce(1, 0);
+    }
+}
+
+/**
+ * draws the score
+ */
+
+function drawScore() {
+
+    textSize(30);
+    textAlign(LEFT);
+    fill(255);
+    noStroke();
+    text((player.maxAltitude + points).toFixed(0), 50, 50);
+}
+
+/**
+ * ends loop, draws game over message
+ */
+
+function endGame() {
+    textAlign(CENTER);
+    textSize(60);
+    noStroke();
+    fill("#90FF90");
+    text("Game Over!", width / 2, height / 2);
+    noLoop();
+}
