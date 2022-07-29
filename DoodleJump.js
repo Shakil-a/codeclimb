@@ -1,5 +1,7 @@
 const GRAVITY = -0.6;
 
+var playing = true;
+
 var player;
 var points;
 
@@ -29,16 +31,25 @@ function setup() {
 
 function draw() {
 
+if (playing === true){
+
+  
   background(30, 30, 30);
-
+  
   handlePlayer();
-
+  
   handlePlatforms();
 
   drawScore();
 
   handleKeys();
 }
+}
+
+function touchEnded(){
+  playing = !playing;
+}
+
 /**
  * updates, draws, and applies GRAVITY to player
  * checks if the player falls
