@@ -98,7 +98,7 @@ function Doodler(x, altitude, enemy, size, color) {
    */
   Doodler.prototype.draw = function(altitude) {
   
-    stroke(255);
+    stroke(335);
     strokeWeight(3);
     fill(this.color);
   

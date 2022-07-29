@@ -7,30 +7,38 @@ var platforms = [];
 
 function setup() {
 
-  createCanvas(400, 600);
+  var cnv = createCanvas(1278, 666);
+  var x = (windowWidth - (width - 211)) / 2;
+  var y = (windowHeight - height + 74) / 2;
+  
+    cnv.position(x, y);
 
-  player = new Doodler(width / 2, height / 2, false, 30, color("#FFF070"));
-
+  player = new Doodler(width / 2, height / 2, false, 30, color("#FFF060"));
+  
   platforms = generatePlatforms();
-
+  
   points = 0;
-
+  
+  
   frameRate(60);
+  
 }
+
+
+
 
 function draw() {
 
-  background(51);
+  background(30, 30, 30);
 
   handlePlayer();
 
   handlePlatforms();
 
-	drawScore();
+  drawScore();
 
   handleKeys();
 }
-
 /**
  * updates, draws, and applies GRAVITY to player
  * checks if the player falls
@@ -67,7 +75,7 @@ function handlePlatforms() {
         if (platforms[i] instanceof Doodler) {
 					// it's not a platform, but a doodler!
 
-          points += 100;
+          points += 1;
           platforms.splice(i, 1); // remove from array
         }
       }
@@ -112,7 +120,7 @@ function generatePlatforms() {
 
       var x = noise(i, y) * width;
 
-      if (noise(y, i) > 0.5) // 50% chance of a new platform
+      if (noise(y, i) > 0.3) // 50% chance of a new platform
         field.push(new Platform(x, y, 55, color("#FF80F0")));
     }
   }
