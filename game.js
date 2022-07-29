@@ -103,3 +103,26 @@ function handlePlatforms() {
        } 
     }
 }
+
+/**
+ * initializes platforms
+ */
+function generatePlatforms() {
+    var field = [];//returning array 
+
+    for(let y = 0; y < height * 2; y += 40){
+        //loop through y 
+
+        for (let i = 0; i < 3; i++) {//attempt 3 new platforms
+          
+            var x = noise(i, y) * width;
+
+            if (noise(y, i) > 0.5)// 50% chance of a new platform
+            field.push(new Platform(x, y, 55, color("'FF80F0")));
+
+        }
+
+    }
+             return field;
+}
+
