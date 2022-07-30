@@ -96,8 +96,12 @@ function Doodler(x, altitude, enemy, size, color) {
   /**
    * draws the doodler with specific altitiude translation
    */
+  // let character;
+  //  function preload(){
+  //   character = loadImage('code-climb-character.png')
+  //   }
   Doodler.prototype.draw = function(altitude) {
-  
+    
     stroke(335);
     strokeWeight(3);
     fill(this.color);
